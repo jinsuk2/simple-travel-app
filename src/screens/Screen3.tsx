@@ -12,7 +12,7 @@ import { View, Text } from 'react-native';
 export const screen3 = () => {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Third screen</Text>
+      <Text>Third screen!</Text>
     </View>
   );
 };

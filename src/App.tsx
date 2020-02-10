@@ -1,4 +1,5 @@
 import { Navigation, LayoutStack } from 'react-native-navigation';
+import SplashScreen from 'react-native-splash-screen';
 import { Screen1, Screen2, Screen3 } from './screens';
 import { SCREEN1, SCREEN2, SCREEN3 } from './globals/screen';
 
@@ -67,6 +68,7 @@ const bottomTabs = {
 };
 
 export const startApp = () => {
+  SplashScreen.hide();
   Navigation.setRoot({
     root: {
       bottomTabs: bottomTabs

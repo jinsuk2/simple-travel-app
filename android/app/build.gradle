@@ -182,7 +182,12 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    
+    // RNN
     implementation project(':react-native-navigation')
+    
+    // Splash Screen
+    implementation project(':react-native-splash-screen')
 
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";

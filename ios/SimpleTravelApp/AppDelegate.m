@@ -10,6 +10,7 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import "RNSplashScreen.h"
 
 @implementation AppDelegate
 
@@ -29,7 +30,7 @@
   [self.window makeKeyAndVisible];
   NSURL *jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
      [ReactNativeNavigation bootstrap:jsCodeLocation launchOptions:launchOptions];
-
+  [RNSplashScreen show];
   return YES;
 }
 
