@@ -16,6 +16,9 @@ import com.reactnativenavigation.react.ReactGateway;
 // Splash Screen
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
 
+// Mapbox
+import com.mapbox.rctmgl.RCTMGLPackage;
+
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Arrays;
@@ -44,7 +47,7 @@ public class MainApplication extends NavigationApplication {
     // No need to add RnnPackage and MainReactPackage
     return Arrays.<ReactPackage>asList(
         // eg. new VectorIconsPackage()
-        new SplashScreenReactPackage());
+        new SplashScreenReactPackage(), new RCTMGLPackage());
   }
 
   @Override

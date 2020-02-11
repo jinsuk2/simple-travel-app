@@ -1,12 +1,12 @@
-import Screen1 from './Screen1';
-import Screen2 from './Screen2';
-import Screen3 from './Screen3';
+import Home from './Home';
+import Calendar from './Calendar';
+import Tools from './Tools';
 
 const screens = {
-  Screen1,
-  Screen2,
-  Screen3
+  Home,
+  Calendar,
+  Tools
 };
 
-export { Screen1, Screen2, Screen3 };
+export { Home, Calendar, Tools };
 export default screens;

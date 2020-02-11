@@ -188,7 +188,9 @@ dependencies {
     
     // Splash Screen
     implementation project(':react-native-splash-screen')
-
+    
+    // Mapbox
+    implementation project(':@react-native-mapbox-gl_maps')
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
         debugImplementation files(hermesPath + "hermes-debug.aar")
