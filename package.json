@@ -19,6 +19,7 @@
     "@types/react-native": "^0.61.12",
     "@types/react-test-renderer": "^16.9.2",
     "react": "16.9.0",
+    "react-icons": "^3.9.0",
     "react-native": "0.61.5",
     "react-native-calendars": "^1.261.0",
     "redux": "^4.0.5",
