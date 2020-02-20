@@ -41,6 +41,7 @@ target 'SimpleTravelApp' do
   pod 'react-native-mapbox-gl', :path => '../node_modules/@react-native-mapbox-gl/maps'
   use_frameworks!
 
+
   target 'SimpleTravelAppTests' do
     inherit! :search_paths
     # Pods for testing

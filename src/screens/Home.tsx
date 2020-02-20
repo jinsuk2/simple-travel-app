@@ -10,6 +10,7 @@ import React, { Component } from 'react';
 import { View, Text, Platform } from 'react-native';
 import MapboxGl from '@react-native-mapbox-gl/maps';
 import { clientOptions } from '../globals/mapbox';
+import { connectData } from '../redux';
 
 const IS_ANDROID = Platform.OS === 'android';
 
@@ -17,20 +18,27 @@ const IS_ANDROID = Platform.OS === 'android';
 MapboxGl.setAccessToken(clientOptions.accessToken);
 MapboxGl.setConnected(true);
 
-export default class Home extends Component {
-  // static propTypes = {
-  //   navigation: PropTypes.shape({ navigate: PropTypes.func })
-  // };
+type Props = {
+
+}
+
+type State = {
+  isFetchingAndroidPermission: boolean,
+  isAndroidPermissionGranted: boolean,
+  activeExample: any,
+  zoom: number
+}
+
+class Home extends React.Component<Props, State> {
+  readonly state: State = {
+    isFetchingAndroidPermission: IS_ANDROID,
+    isAndroidPermissionGranted: false,
+    activeExample: -1,
+    zoom: 14
+  }
 
   constructor(props: any) {
     super(props);
-
-    this.state = {
-      isFetchingAndroidPermission: IS_ANDROID,
-      isAndroidPermissionGranted: false,
-      activeExample: -1,
-      zoom: 14
-    };
   }
 
   async componentDidMount() {
@@ -53,7 +61,7 @@ export default class Home extends Component {
           backgroundColor: '#F5FCFF'
         }}
       >
-        <View style={{ height: 550, width: 412 }}>
+        <View style={{ height: 200, width: 412 }}>
           <MapboxGl.MapView
             compassEnabled
             styleURL={'mapbox://styles/mapbox/outdoors-v11'}
@@ -74,3 +82,5 @@ export default class Home extends Component {
     );
   }
 }
+
+export default connectData()(Home);

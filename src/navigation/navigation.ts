@@ -1,11 +1,10 @@
 import { Navigation } from "react-native-navigation";
-import { HOME, CALENDAR, TOOLS } from "../globals/screen";
-import { Home, Calendar, Tools } from "../screens/index";
+import { HOME, CALENDAR, TOOLS } from "./screens";
+import SplashScreen from 'react-native-splash-screen';
+import { registerScreens } from './screenRegister';
 
 // Register Each Screen to the Navigator by Assigning a name
-Navigation.registerComponent(HOME, () => Home);
-Navigation.registerComponent(CALENDAR, () => Calendar);
-Navigation.registerComponent(TOOLS, () => Tools);
+registerScreens();
 
 const mapStack = {
 	stack: {
@@ -15,19 +14,19 @@ const mapStack = {
 					name: HOME,
 					options: {
 						topBar: {
-							visible: true,
+							visible: false,
 							title: {
 								text: "Map/Home"
 							},
 							rightButtons: [
 								{
-									id: "hi_button_id",
-									text: "Home"
+									id: 'nav_logout_btn',
+									icon: require("../images/image001.jpg")
 								}
 							]
 						}
 					}
-				}
+				},
 			}
 		],
 		options: {
@@ -54,8 +53,9 @@ const calendarStack = {
 							},
 							rightButtons: [
 								{
-									id: "hi_button_id",
-									text: "Calendar"
+									id: "calendar_right_btn",
+									text: "RightCalendar",
+									color: "black"
 								}
 							]
 						}
@@ -105,4 +105,47 @@ const toolStack = {
 	}
 };
 
-export { mapStack, calendarStack, toolStack };
+const bottomTabs = {
+	children: [mapStack, calendarStack, toolStack],
+	options: {}
+};
+
+
+export default function () {
+	Navigation.setDefaultOptions({
+		topBar: {
+			background: {
+				color: '#039893'
+			},
+			title: {
+				color: 'white',
+			},
+			backButton: {
+				title: '', // Remove previous screen name from back button
+				color: 'white'
+			}
+		},
+		statusBar: {
+			style: 'light'
+		},
+		layout: {
+			orientation: ['portrait']
+		},
+		bottomTabs: {
+			titleDisplayMode: 'alwaysShow'
+		},
+		bottomTab: {
+			textColor: 'gray',
+			selectedTextColor: 'black',
+			iconColor: 'gray',
+			selectedIconColor: 'black',
+		}
+	});
+	Navigation.setRoot({
+		root: {
+			bottomTabs: bottomTabs
+		}
+	});
+	SplashScreen.hide();
+}
+

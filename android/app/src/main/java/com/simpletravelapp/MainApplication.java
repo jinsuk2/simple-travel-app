@@ -19,6 +19,9 @@ import org.devio.rn.splashscreen.SplashScreenReactPackage;
 // Mapbox
 import com.mapbox.rctmgl.RCTMGLPackage;
 
+// AsyncStorage
+import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
+
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Arrays;
@@ -47,7 +50,7 @@ public class MainApplication extends NavigationApplication {
     // No need to add RnnPackage and MainReactPackage
     return Arrays.<ReactPackage>asList(
         // eg. new VectorIconsPackage()
-        new SplashScreenReactPackage(), new RCTMGLPackage());
+        new SplashScreenReactPackage(), new RCTMGLPackage(), new AsyncStoragePackage());
   }
 
   @Override

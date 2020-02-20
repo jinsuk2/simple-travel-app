@@ -1,26 +1,51 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import React from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
 import {
-  Calendar as CalendarView,
-  CalendarList,
-  Agenda
+  Calendar as CalendarView
 } from 'react-native-calendars';
+import { connectData } from "../redux";
 
-const config = {
-  day: 1, // day of month (1-31)
-  month: 1, // month of year (1-12)
-  year: 2017, // year
-  timestamp: new Date().toISOString(), // UTC timestamp representing 00:00 AM of this date
-  dateString: '2016-05-13' // date formatted as 'YYYY-MM-DD' string
-};
-export default class Calendar extends Component {
+type Props = {
+  getUserData: Function,
+  data: any
+}
+
+type State = {
+  user: string,
+  test: string
+}
+
+class Calendar extends React.Component<Props, State> {
+
+  readonly state: State = {
+    user: "",
+    test: ""
+  }
+
+  getHello = () => {
+    const { getUserData } = this.props;
+
+    // For Testing
+    const number = Math.random();
+    getUserData({ number });
+  }
+
   render() {
+    const { data } = this.props;
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <View style={{ height: 550, width: 410 }}>
+        <View style={{ height: 300, width: 410, marginBottom: 10 }}>
           <CalendarView />
         </View>
-      </View>
+        <TouchableOpacity onPress={() => {
+          this.getHello();
+        }
+        }>
+          <Text>Test {data ? data.user : "nope"}</Text>
+        </TouchableOpacity>
+      </View >
     );
   }
 }
+
+export default connectData()(Calendar);
