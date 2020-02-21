@@ -6,14 +6,16 @@ import {
     CURRENCY,
     HOME,
     JOURNAL,
+    LOGIN,
     PHOTOS,
     TODOS,
     TOOLS,
     SETTINGS
-} from "./screens";
+} from "./screenNames";
 import {
     Calendar,
     Home,
+    Login,
     Photos,
     Tools
 } from "../screens";
@@ -38,6 +40,9 @@ function WrappedComponent(Component: any) {
 }
 
 export const registerScreens = () => {
+    // Login Stack
+    Navigation.registerComponent(LOGIN, () => WrappedComponent(Login));
+
     // Main Stack
     Navigation.registerComponent(HOME, () => WrappedComponent(Home));
     Navigation.registerComponent(CALENDAR, () => WrappedComponent(Calendar));

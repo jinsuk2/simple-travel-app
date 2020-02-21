@@ -1,4 +1,4 @@
-import { HOME, CALENDAR, TOOLS, PHOTOS } from "./screens";
+import { HOME, CALENDAR, TOOLS, PHOTOS } from "./screenNames";
 
 const mapStack = {
     stack: {

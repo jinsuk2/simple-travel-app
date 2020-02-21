@@ -1,6 +1,3 @@
-import { Navigation } from "react-native-navigation"
-
-
 const handlePushPop = (name: string, props: any, title: string) => {
     return {
         component: {

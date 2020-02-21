@@ -1,5 +1,4 @@
 import { Navigation } from "react-native-navigation";
-import { HOME, CALENDAR, TOOLS } from "./screens";
 import SplashScreen from 'react-native-splash-screen';
 import { registerScreens } from './screenRegister';
 import { bottomTabs } from "./mainStacks";

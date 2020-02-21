@@ -9,13 +9,12 @@
 import React, { Component } from 'react';
 import { View, Text, Platform } from 'react-native';
 import MapboxGl from '@react-native-mapbox-gl/maps';
-import { clientOptions } from '../globals/mapbox';
 import { connectData } from '../redux';
 
 const IS_ANDROID = Platform.OS === 'android';
 
 // Mapbox
-MapboxGl.setAccessToken(clientOptions.accessToken);
+MapboxGl.setAccessToken("pk.eyJ1Ijoiamluc3Vra2ltOTQiLCJhIjoiY2s2aDFnaG5vMHNhNDNnb2U1ZjE2MHpmciJ9.arU85nmNy8uinvlPyysJWw");
 MapboxGl.setConnected(true);
 
 type Props = {
