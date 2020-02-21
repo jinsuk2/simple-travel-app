@@ -1,12 +1,14 @@
 import Home from './Home';
 import Calendar from './Calendar';
+import Photos from "./Photos";
 import Tools from './Tools';
 
 const screens = {
-  Home,
   Calendar,
-  Tools
+  Home,
+  Photos,
+  Tools,
 };
 
-export { Home, Calendar, Tools };
+export { Calendar, Home, Photos, Tools };
 export default screens;
